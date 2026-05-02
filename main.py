@@ -22,10 +22,6 @@ class ChatRequest(BaseModel):
 api_key = os.getenv("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
-models = client.models.list()
-# /
-# ---- SYSTEM PROMPT ----
-
 
 @app.post("/chat/{topic}")
 async def chat(topic: str,req: ChatRequest):
